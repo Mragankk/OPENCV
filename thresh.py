@@ -7,7 +7,7 @@ If compared pixel has value less than threshold value , set that pixel intensity
 import cv2 as cv
 
 img=cv.resize((cv.imread('photos/park.jpg')),(500,500),interpolation=cv.INTER_AREA)
-# cv.imshow("pic",img)
+cv.imshow("pic",img)
 
 gray=cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 cv.imshow('GRAY',gray)

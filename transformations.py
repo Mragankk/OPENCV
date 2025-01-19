@@ -15,8 +15,8 @@ def translate(img,x,y):
 # y  > Down 
 
 translated=translate(img,-100,-100)  # try -100,100 or -100,-100
-# cv.imshow("TRANSLATED IMAGE",translated)
-# cv.waitKey(0)
+cv.imshow("TRANSLATED IMAGE",translated)
+cv.waitKey(0)
 
 '''ROTATING'''
 def rotate(img,angle,rotPoint=None):
@@ -30,20 +30,20 @@ def rotate(img,angle,rotPoint=None):
     return cv.warpAffine(img,rotMat,dimensions)
 
 rotated_img=rotate(img,180) # for clockwise -45
-# cv.imshow("IMAGE ROTATED",rotated_img)
-# cv.waitKey(0)
+cv.imshow("IMAGE ROTATED",rotated_img)
+cv.waitKey(0)
 
 '''RESIZING'''
 resized_img=cv.resize(img,(500,500),interpolation=cv.INTER_CUBIC)
-# cv.imshow("RESIZED IMAGE",resized_img)
-# cv.waitKey(0)
+cv.imshow("RESIZED IMAGE",resized_img)
+cv.waitKey(0)
 
 '''FLIPPING'''
 flip=cv.flip(img,1) # code could be 0(verticle),1(horizontal),-1(flipping both vertically and horizontally)
-# cv.imshow("flipped",flip)
-# cv.waitKey(0)
+cv.imshow("flipped",flip)
+cv.waitKey(0)
 
 '''CROPPING'''
 cropped=img[100:500,350:800]
-# cv.imshow("CROPPED",cropped)
-# cv.waitKey(0)
+cv.imshow("CROPPED",cropped)
+cv.waitKey(0)

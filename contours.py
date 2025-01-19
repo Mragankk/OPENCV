@@ -12,23 +12,23 @@ img=cv.resize(img,(600,600),interpolation=cv.INTER_CUBIC)
 # cv.imshow('image',img)
 
 gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-# cv.imshow("GRAY",gray)
-# canny=cv.Canny(img,125,175)
-# cv.imshow("canny edges",canny)
+cv.imshow("GRAY",gray)
+canny=cv.Canny(img,125,175)
+cv.imshow("canny edges",canny)
 
 
 
 '''THRESHHOLDING [Converting image into binary format-0[black] or 1[white]]'''
 ret,thresh=cv.threshold(gray,125,255,cv.THRESH_BINARY)
-# cv.imshow("threshold",thresh)
-# cv.waitKey(0)
+cv.imshow("threshold",thresh)
+cv.waitKey(0)
 
 contours,hierarchies=cv.findContours(thresh,cv.RETR_LIST,cv.CHAIN_APPROX_NONE)
 
 
 blank=np.zeros(img.shape,dtype='uint8')
-# cv.imshow("blank",blank)
+cv.imshow("blank",blank)
 
 cv.drawContours(blank,contours,-1,(0,255,125),1)
-# cv.imshow("contours drawn",blank)
-# cv.waitKey(0)
+cv.imshow("contours drawn",blank)
+cv.waitKey(0)

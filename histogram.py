@@ -5,27 +5,27 @@ import matplotlib.pyplot as plt
 img = cv.resize((cv.imread('photos/PF.jpg')),(500,500),interpolation=cv.INTER_AREA)
 
 gray=cv.cvtColor(img,cv.COLOR_BGR2GRAY)
-# cv.imshow("gray",gray)
+cv.imshow("gray",gray)
 
 
 blank=np.zeros((gray.shape[:2]),dtype='uint8')
 circle=cv.circle(blank,(img.shape[1]//2,img.shape[0]//2),100,255,-1)
-# cv.imshow("MASK CIRCLE",circle)
+cv.imshow("MASK CIRCLE",circle)
 
 masked=cv.bitwise_and(gray,gray,mask=circle)
-# cv.imshow("MASK",masked)
+cv.imshow("MASK",masked)
 
 
 ''' GRAYSCALE histogram'''
 # passing images as list
-# gray_hist=cv.calcHist([gray],[0],masked,[256],[0,256])
-# plt.figure()
-# plt.title("GRAYSCALE HISTOGRAM")
-# plt.xlabel('Bins')
-# plt.ylabel('# of pixels')
-# plt.plot(gray_hist)
-# plt.xlim([0,256])
-# plt.show()
+gray_hist=cv.calcHist([gray],[0],masked,[256],[0,256])
+plt.figure()
+plt.title("GRAYSCALE HISTOGRAM")
+plt.xlabel('Bins')
+plt.ylabel('# of pixels')
+plt.plot(gray_hist)
+plt.xlim([0,256])
+plt.show()
 
 
 ''' COLOR HISTOGRAM'''

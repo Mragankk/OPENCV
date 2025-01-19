@@ -2,9 +2,9 @@ import cv2 as cv
 
 
 ''' Reading Images'''
-# img=cv.imread('photos/jasii.jpg') # takes path to image and returns the image as matrix of pixels!
-# cv.imshow('jasii',img) # to show the image in new window( takes 2 args picture title and picture to be displayed)
-# cv.waitKey(10)  # wait until pressing any key to continue 
+img=cv.imread('photos/jasii.jpg') # takes path to image and returns the image as matrix of pixels!
+cv.imshow('jasii',img) # to show the image in new window( takes 2 args picture title and picture to be displayed)
+cv.waitKey(10)  # wait until pressing any key to continue 
 
 '''Reading Videos'''
 vid=cv.VideoCapture('videos\dog_running.mp4')  # vid is the instance of the videoCapture clause
